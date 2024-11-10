@@ -23,13 +23,15 @@ public class WindowKeyboard extends Keyboard {
         textField.setEnabled(true);
         textField.addKeyListener(new KeyAdapter() {
             public void keyReleased(KeyEvent e) {
-                input.add(e.getKeyChar());
-                e.consume();
+                if (e.getComponent() == textField) {
+                  input.add(e.getKeyChar());
+                  e.consume();
+                }
             }
         });
         window.setLayout(new BorderLayout());
         window.add(textField,BorderLayout.CENTER);
-        window.setAlwaysOnTop(true);
+        //window.setAlwaysOnTop(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.pack();
         Point loc = window.getLocation();

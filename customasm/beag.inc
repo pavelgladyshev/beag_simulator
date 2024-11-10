@@ -3,8 +3,16 @@
 {
     #bits 16
     #addr 0x0000
-    #size 0x2000
+    #addr_end 0x1FFF
     #outp 0
+}
+
+#bankdef data
+{
+    #bits 16
+    #addr 0x2000
+    #addr_end 0x3FFF
+    #outp 16*0x2000
 }
 
 #subruledef register
@@ -126,4 +134,6 @@
 #ruledef
 {
     nop => asm{ add r0,r0,r0 }
-}      
+}
+
+#bank program      

@@ -21,7 +21,7 @@ public class WindowDisplay extends Display {
         out = new JTextAreaOutputStream(textArea);
         window.setLayout(new BorderLayout());
         window.add(textArea,BorderLayout.CENTER);
-        window.setAlwaysOnTop(true);
+        //window.setAlwaysOnTop(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.pack();
         window.setVisible(true);
